@@ -1,0 +1,180 @@
+(SHELL) Creating VFS (space: 9000 B)
+Virtual disk "VFS" created successfully
+
+(SHELL) Adding small file "a"
+Virtual disk "VFS" opened successfully
+
+File "a" copied successfully
+
+(SHELL) Adding small file "c"
+Virtual disk "VFS" opened successfully
+
+File "c" copied successfully
+
+(SHELL) Adding small file "d"
+Virtual disk "VFS" opened successfully
+
+File "d" copied successfully
+
+(SHELL) View disk files
+Virtual disk "VFS" opened successfully
+
+*********** List of files from "VFS" ***********
+
+1. File: a | Size:111 | Created: Fri Jan 12 09:41:05 2024
+ | Modified: Fri Jan 12 09:41:05 2024
+ | First data block: 0 | Last data block: 0
+
+2. File: c | Size:111 | Created: Fri Jan 12 09:41:06 2024
+ | Modified: Fri Jan 12 09:41:06 2024
+ | First data block: 1 | Last data block: 1
+
+3. File: d | Size:110 | Created: Fri Jan 12 09:41:07 2024
+ | Modified: Fri Jan 12 09:41:07 2024
+ | First data block: 2 | Last data block: 2
+
+(SHELL) View disk information
+Virtual disk "VFS" opened successfully
+
+************ Virtual Disk Info ************
+
+Disk name: VFS
+Disk size: 12000
+Number of data blocks: 5 (2048 B each)
+
+**** Blocks ****
+
+------------------------------------------------------------------
+Adr: #0 | Type: SB | Size: 80
+------------------------------------------------------------------
+Adr: #80 | Type: FAT | Size: 20
+------------------------------------------------------------------
+Adr: #100 | Type: rootDirectory | Size: 420
+------------------------------------------------------------------
+Adr: #520 | Type: DataBlock | Usage: Used | Free Space: 1937/2048
+------------------------------------------------------------------
+Adr: #2568 | Type: DataBlock | Usage: Used | Free Space: 1937/2048
+------------------------------------------------------------------
+Adr: #4616 | Type: DataBlock | Usage: Used | Free Space: 1938/2048
+------------------------------------------------------------------
+Adr: #6664 | Type: DataBlock | Usage: Unused | Free Space: 2048/2048
+------------------------------------------------------------------
+Adr: #8712 | Type: DataBlock | Usage: Unused | Free Space: 2048/2048
+------------------------------------------------------------------
+
+**** Disk usage ****
+
+Free blocks number: 2/5
+Free space for new file: 4096 B
+
+(SHELL) Removing file "c"
+Virtual disk "VFS" opened successfully
+
+File "c" removed successfully from the VFS
+
+(SHELL) View disk files
+Virtual disk "VFS" opened successfully
+
+*********** List of files from "VFS" ***********
+
+1. File: a | Size:111 | Created: Fri Jan 12 09:41:05 2024
+ | Modified: Fri Jan 12 09:41:05 2024
+ | First data block: 0 | Last data block: 0
+
+3. File: d | Size:110 | Created: Fri Jan 12 09:41:07 2024
+ | Modified: Fri Jan 12 09:41:07 2024
+ | First data block: 2 | Last data block: 2
+
+(SHELL) View disk information
+Virtual disk "VFS" opened successfully
+
+************ Virtual Disk Info ************
+
+Disk name: VFS
+Disk size: 12000
+Number of data blocks: 5 (2048 B each)
+
+**** Blocks ****
+
+------------------------------------------------------------------
+Adr: #0 | Type: SB | Size: 80
+------------------------------------------------------------------
+Adr: #80 | Type: FAT | Size: 20
+------------------------------------------------------------------
+Adr: #100 | Type: rootDirectory | Size: 420
+------------------------------------------------------------------
+Adr: #520 | Type: DataBlock | Usage: Used | Free Space: 1937/2048
+------------------------------------------------------------------
+Adr: #2568 | Type: DataBlock | Usage: Unused | Free Space: 2048/2048
+------------------------------------------------------------------
+Adr: #4616 | Type: DataBlock | Usage: Used | Free Space: 1938/2048
+------------------------------------------------------------------
+Adr: #6664 | Type: DataBlock | Usage: Unused | Free Space: 2048/2048
+------------------------------------------------------------------
+Adr: #8712 | Type: DataBlock | Usage: Unused | Free Space: 2048/2048
+------------------------------------------------------------------
+
+**** Disk usage ****
+
+Free blocks number: 3/5
+Free space for new file: 6144 B
+
+(SHELL) Adding big file "b"
+Virtual disk "VFS" opened successfully
+
+File "b" copied successfully
+
+(SHELL) View disk files
+Virtual disk "VFS" opened successfully
+
+*********** List of files from "VFS" ***********
+
+1. File: a | Size:111 | Created: Fri Jan 12 09:41:05 2024
+ | Modified: Fri Jan 12 09:41:05 2024
+ | First data block: 0 | Last data block: 0
+
+2. File: b | Size:2071 | Created: Fri Jan 12 09:41:13 2024
+ | Modified: Fri Jan 12 09:41:13 2024
+ | First data block: 1 | Last data block: 2
+
+3. File: d | Size:110 | Created: Fri Jan 12 09:41:07 2024
+ | Modified: Fri Jan 12 09:41:07 2024
+ | First data block: 2 | Last data block: 2
+
+(SHELL) View disk information
+Virtual disk "VFS" opened successfully
+
+************ Virtual Disk Info ************
+
+Disk name: VFS
+Disk size: 12000
+Number of data blocks: 5 (2048 B each)
+
+**** Blocks ****
+
+------------------------------------------------------------------
+Adr: #0 | Type: SB | Size: 80
+------------------------------------------------------------------
+Adr: #80 | Type: FAT | Size: 20
+------------------------------------------------------------------
+Adr: #100 | Type: rootDirectory | Size: 420
+------------------------------------------------------------------
+Adr: #520 | Type: DataBlock | Usage: Used | Free Space: 1937/2048
+------------------------------------------------------------------
+Adr: #2568 | Type: DataBlock | Usage: Used | Free Space: 0/2048
+------------------------------------------------------------------
+Adr: #4616 | Type: DataBlock | Usage: Used | Free Space: 1938/2048
+------------------------------------------------------------------
+Adr: #6664 | Type: DataBlock | Usage: Used | Free Space: 2025/2048
+------------------------------------------------------------------
+Adr: #8712 | Type: DataBlock | Usage: Unused | Free Space: 2048/2048
+------------------------------------------------------------------
+
+**** Disk usage ****
+
+Free blocks number: 1/5
+Free space for new file: 2048 B
+
+(SHELL) Removing VFS
+Virtual disk "VFS" removed successfully
+

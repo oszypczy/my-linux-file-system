@@ -1,0 +1,84 @@
+#!/bin/sh
+
+VFS_NAME='VFS'
+
+echo '(SHELL) Creating VFS (space: 9000 B)'
+./main $VFS_NAME -createVFS 9000
+sleep 1
+
+echo '(SHELL) View disk files'
+./main $VFS_NAME -viewFiles
+sleep 1
+
+echo '(SHELL) View disk information'
+./main $VFS_NAME -viewInfo
+sleep 1
+
+echo '(SHELL) Adding small file "a"'
+./main $VFS_NAME -copyIntoVD a a
+sleep 1
+
+echo '(SHELL) View disk files'
+./main $VFS_NAME -viewFiles
+sleep 1
+
+echo '(SHELL) View disk information'
+./main $VFS_NAME -viewInfo
+sleep 1
+
+echo '(SHELL) Adding big file "b"'
+./main $VFS_NAME -copyIntoVD b b
+sleep 1
+
+echo '(SHELL) View disk files'
+./main $VFS_NAME -viewFiles
+sleep 1
+
+echo '(SHELL) View disk information'
+./main $VFS_NAME -viewInfo
+sleep 1
+
+echo '(SHELL) Copying file "a" from VD to OS'
+./main $VFS_NAME -copyFromVD a a_copy
+sleep 1
+
+if diff "a" "a_copy" &> /dev/null 
+then
+    echo "(SHELL) The files a and a_copy are the same."
+else
+    echo "(SHELL) The files a and a_copy are different."
+fi
+sleep 1
+echo ''
+
+echo '(SHELL) Trying to add file "c" (too big)'
+./main $VFS_NAME -copyIntoVD c c
+sleep 1
+echo ''
+
+echo '(SHELL) Removing file "b"'
+./main $VFS_NAME -removeFromVD b
+sleep 1
+
+echo '(SHELL) View disk files'
+./main $VFS_NAME -viewFiles
+sleep 1
+
+echo '(SHELL) View disk information'
+./main $VFS_NAME -viewInfo
+sleep 1
+
+echo '(SHELL) Try to remove file "b" (not exist)'
+./main $VFS_NAME -removeFromVD b
+sleep 1
+echo ''
+
+echo '(SHELL) Removing VFS'
+./main $VFS_NAME -removeVFS
+sleep 1
+
+echo '(SHELL) Try to create too small VFS (space: 100 B)'
+./main $VFS_NAME -createVFS 100
+sleep 1
+
+rm a_copy
